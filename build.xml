@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="prj" name="Project festival">
+  <!-- Applet building dependencies -->
+  <property name="JC221" value="../ext/java_card_kit-2_2_1"/>
+    
+  <!-- ant-javacard task from javacard.pro -->
+  <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="../ext/ant-javacard.jar"/>
+  <!-- All included applets -->
+  <target name="prj">
+    <javacard>
+      <cap jckit="${JC221}" output="Project.cap" sources="src/prj">
+        <applet class="prj.Project" aid="0102030405010204"/>
+      </cap>
+    </javacard>
+  </target>
+</project>
